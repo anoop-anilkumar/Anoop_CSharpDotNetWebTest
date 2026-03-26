@@ -1,0 +1,48 @@
+@model AnoopUserRegistrationTest.Models.User
+
+@{
+    ViewData["Title"] = "Welcome";
+    var maskedPassword = "********";
+}
+
+<section class="welcome-shell">
+    <div class="welcome-card">
+        <div class="section-heading">
+            <span class="section-kicker">Welcome page</span>
+            <h1>Hello, @Model.FirstName!</h1>
+            <p>Your user account has been loaded successfully from secure session-backed authentication.</p>
+        </div>
+
+        @if (TempData["SuccessMessage"] is string successMessage)
+        {
+            <div class="alert alert-success" role="alert">@successMessage</div>
+        }
+
+        <div class="user-grid">
+            <div class="user-field">
+                <span>First name</span>
+                <strong>@Model.FirstName</strong>
+            </div>
+            <div class="user-field">
+                <span>Last name</span>
+                <strong>@Model.LastName</strong>
+            </div>
+            <div class="user-field">
+                <span>Email</span>
+                <strong>@Model.Email</strong>
+            </div>
+            <div class="user-field">
+                <span>Password</span>
+                <strong>@maskedPassword</strong>
+            </div>
+        </div>
+
+        <div class="welcome-actions">
+            <a asp-action="ChangePassword" class="btn btn-primary btn-lg">Change password</a>
+            <form asp-action="Logout" method="post">
+                @Html.AntiForgeryToken()
+                <button type="submit" class="btn btn-outline-primary btn-lg">Logout</button>
+            </form>
+        </div>
+    </div>
+</section>

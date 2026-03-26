@@ -1,0 +1,81 @@
+@{
+    ViewData["Title"] = "About";
+}
+
+<section class="info-shell d-flex align-items-center justify-content-center">
+    <div class="info-card">
+        <div class="section-heading">
+            <span class="section-kicker">About the app</span>
+            <h1>A .NET 8 MVC user authentication demo with a clean, security-focused structure.</h1>
+            <p>
+                This application demonstrates a complete registration and login flow using ASP.NET Core MVC, Razor views,
+                cookie-based authentication with claims, and encrypted JSON storage so it runs without any external database setup.
+            </p>
+        </div>
+
+        <div class="info-grid">
+            <article class="info-block">
+                <h2>Theme and color direction</h2>
+                <p>
+                    The blue visual treatment was chosen to align with our <b>S-Digital</b> website style, keeping the UI clean,
+                    modern, and professional while still maintaining strong readability and contrast.
+                </p>
+            </article>
+            <article class="info-block">
+                <h2>Core security features</h2>
+                <p>
+                    The app uses server-side validation, anti-forgery tokens, duplicate-email checks, secure cookie
+                    authentication, claims and roles, masked password display, AES-256-CBC storage encryption, and
+                    friendly error handling.
+                </p>
+            </article>
+            <article class="info-block">
+                <h2>Password protection</h2>
+                <p>
+                    Passwords are salted and hashed with SHA256 before storage, which means raw passwords are never saved
+                    and login verifies a hash rather than comparing plain text.
+                </p>
+            </article>
+            <article class="info-block">
+                <h2>Authentication and login persistence</h2>
+                <p>
+                    The app uses standard ASP.NET Core cookie authentication with claims and roles. Data Protection keys
+                    are persisted so authentication cookies survive normal application restarts more reliably.
+                </p>
+            </article>
+            <article class="info-block">
+                <h2>AES-256-CBC encryption</h2>
+                <p>
+                    Before the user list is written to the JSON file, it is encrypted with AES-256-CBC and a fresh IV.
+                    When data is loaded back, the service decrypts the payload first and then deserializes the user data.
+                </p>
+            </article>
+            <article class="info-block">
+                <h2>Secure transport and headers</h2>
+                <p>
+                    HTTPS redirection and HSTS are enabled, and the Kestrel server header is removed to reduce version
+                    disclosure. Security headers such as <code>X-Content-Type-Options</code> are also added globally.
+                </p>
+            </article>
+            <article class="info-block">
+                <h2>Account protection</h2>
+                <p>
+                    The app includes role-based access, remember-me support, login lockout after repeated failures, and
+                    protected welcome and password-management pages.
+                </p>
+            </article>
+            <article class="info-block">
+                <h2>Error handling and audit trail</h2>
+                <p>
+                    Service-layer logging records registration, login, reset, and password change activity. Local try/catch
+                    handles expected failures, while a global exception middleware routes unexpected errors to a custom page.
+                </p>
+            </article>
+        </div>
+
+        <div class="landing-actions">
+            <a asp-controller="Account" asp-action="Register" class="btn btn-primary btn-lg">Start with registration</a>
+            <a asp-controller="Account" asp-action="Login" class="btn btn-outline-primary btn-lg">Go to login</a>
+        </div>
+    </div>
+</section>

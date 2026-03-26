@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<section class="landing-shell d-flex align-items-center justify-content-center">
+    <div class="landing-card">
+        <span class="eyebrow">ASP.NET Core MVC Demo</span>
+        <h1>Secure user registration and login in one clean flow.</h1>
+        <p>
+            This project demonstrates registration, duplicate-email checks, hashed passwords, session-backed login,
+            validation attributes, and a simple JSON storage layer.
+        </p>
+        <div class="hero-points landing-points">
+            <div>
+                <strong>Security-focused</strong>
+                <span>Password hashing, anti-forgery validation, and server-side checks are built in.</span>
+            </div>
+            <div>
+                <strong>Login Ready flow</strong>
+                <span>Registration, login, forgot password, change password, and a protected welcome page.</span>
+            </div>
+        </div>
+        <div class="landing-actions">
+            <a asp-controller="Account" asp-action="Register" class="btn btn-primary btn-lg">Create account</a>
+            <a asp-controller="Account" asp-action="Login" class="btn btn-outline-primary btn-lg">Login</a>
+        </div>
+    </div>
+</section>

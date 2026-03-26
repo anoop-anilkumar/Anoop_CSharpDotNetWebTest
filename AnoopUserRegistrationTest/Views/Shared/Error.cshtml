@@ -1,0 +1,29 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+<section class="info-shell">
+    <div class="info-card">
+        <div class="section-heading">
+            <span class="section-kicker">Error page</span>
+            <h1>Something went wrong while processing your request.</h1>
+            <p>
+                The issue has been handled safely. Please go back and try again, or return to the home page.
+            </p>
+        </div>
+
+        @if (Model.ShowRequestId)
+        {
+            <div class="info-block">
+                <h2>Request reference</h2>
+                <p><strong>Request ID:</strong> <code>@Model.RequestId</code></p>
+            </div>
+        }
+
+        <div class="landing-actions">
+            <a asp-controller="Home" asp-action="Index" class="btn btn-primary btn-lg">Return home</a>
+            <a asp-controller="Home" asp-action="About" class="btn btn-outline-primary btn-lg">View security notes</a>
+        </div>
+    </div>
+</section>
