@@ -1,4 +1,13 @@
 /.DS_Store
+/AnoopUserRegistrationTest/.DS_Store
 /AnoopUserRegistrationTest/wwwroot
 /AnoopUserRegistrationTest/bin
 /AnoopUserRegistrationTest/obj
+/AnoopUserRegistrationTest/appsettings.Development.json
+/AnoopUserRegistrationTest/appsettings.Production.json
+/AnoopUserRegistrationTest/appsettings.Staging.json
+/AnoopUserRegistrationTest/appsettings.json
+/AnoopUserRegistrationTest/Properties/launchSettings.json
+/AnoopUserRegistrationTest/Properties/PublishProfiles
+/AnoopUserRegistrationTest/Properties/PublishProfiles/*
+/AnoopUserRegistrationTest/App_Data/
